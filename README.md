@@ -10,7 +10,7 @@ The starter app for **Product in a Day**, the HEC Paris PM Club simulation. Part
 Three apps that share one set of orders: a customer app (phone), a restaurant tablet and a rider app (phone). Everything runs in the browser on mock data. There is no backend, no login and no API key, so a remix cannot leak data or run up costs.
 
 - `?view=gallery` shows every screen side by side. Use it for the Figma starter.
-- `main` is the starter. Branches `reference-a` to `reference-f` hold one finished minimum build per feature family, for crew fallback only.
+- Crew only: finished reference builds for each feature family live in a separate private repository. See the crew note that came with this repository.
 
 ## For organisers
 
@@ -25,11 +25,11 @@ npm run typecheck  # optional type check
 
 ### Put it in Google AI Studio (Engineering Lead)
 
-1. Push this repository to GitHub as a public repository, `main` branch only for the starter.
+1. Push the `main` branch only to a new **public** GitHub repository (for example `platto-sandbox`): `git push <public-remote> main`.
 2. In Google AI Studio, open **Build**, start a new app, then use **Add files (+) → Import from GitHub** and pick the repository.
 3. Check the preview: switch between the three apps, place an order, and open `?view=gallery`.
 4. **Share** the app with "anyone with the link". This is the link participants **remix** during pre-work.
-5. Repeat for each `reference-*` branch as a separate, **private** app. Share those links only with floaters.
+5. Push all branches to a second, **private** repository (for example `platto-reference`): `git push <private-remote> --all`. For each `reference-*` branch, set it as the default branch in GitHub (Settings → General → Default branch), import it into AI Studio as its own app, and keep that app **private**. Name the apps `Platto ref A` to `Platto ref F`. Share those links only with floaters.
 
 ### Fallback builder: Bolt
 
