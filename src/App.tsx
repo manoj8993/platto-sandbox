@@ -1,13 +1,14 @@
 // Platto Sandbox: the workspace shell.
 // The top bar switches between the three Platto apps. They share one store, so an order
 // placed in the customer app appears on the restaurant tablet and then in the rider app.
-// Add ?view=gallery to the URL to see every screen side by side (used for the Figma import).
+// Add ?view=gallery to the URL to see every screen side by side, or ?view=parts for the parts sheet (both used for the Figma import).
 
 import { useState } from 'react';
 import { CustomerApp } from './apps/CustomerApp';
 import { RestaurantApp } from './apps/RestaurantApp';
 import { RiderApp } from './apps/RiderApp';
 import { Gallery } from './Gallery';
+import { Parts } from './Parts';
 import { PlattoProvider, usePlatto } from './state/PlattoStore';
 import type { Surface } from './types';
 
@@ -66,8 +67,9 @@ function Workspace() {
 }
 
 export default function App() {
-  const isGallery = new URLSearchParams(window.location.search).get('view') === 'gallery';
-  if (isGallery) return <Gallery />;
+  const view = new URLSearchParams(window.location.search).get('view');
+  if (view === 'gallery') return <Gallery />;
+  if (view === 'parts') return <Parts />;
   return (
     <PlattoProvider>
       <Workspace />
